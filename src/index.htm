@@ -18,17 +18,19 @@
 <body>
   <h1>Hello</h1>
   <div id="app">
-    <input v-model="name" placeholder="Name">
-    <button v-on:click="sayHello()" class="btn btn-primary">Say hello</button>
-    <div>{{ greeting }}</div>
+
+    <h2>ALL RECORDS</h2>
+
+    <ul v-if="records">
+      <li v-for="record in Records">
+        {{record.id}} {{record.title}} {{record.artist}} {{record.yop}} {{record.albumRating}}
+      </li>
+    </ul>
+    <div v-else>No Records</div>
+
+    
   </div>
 
-  <ul v-if="records.length">
-    <li v-for="car in cars">
-      {{record.id}} {{record.title}} {{record.artist}} {{record.yop}} {{record.albumRating}}
-    </li>
-  </ul>
-  <div v-else>No cars</div>
 
 
 

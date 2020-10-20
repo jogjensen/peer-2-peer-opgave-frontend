@@ -1,10 +1,10 @@
 //Kald på rest
 let baseUrl: string = "http://recordsrest.azurewebsites.net/api/records"
 
-// import axios, {
-//     AxiosRespone,
-//     AxiosError
-// } from "../../node_modules/axios/index"
+ import axios, {
+    AxiosResponse,
+    AxiosError
+} from "../../node_modules/axios/index"
 
 interface IRecords{
     id: number,
@@ -15,9 +15,6 @@ interface IRecords{
 }
 
 
-
-
-
 new Vue({
     // TypeScript compiler complains about Vue because the CDN link to Vue is in the html file.
     // Before the application runs this TypeScript file will be compiled into bundle.js
@@ -25,26 +22,22 @@ new Vue({
     el: "#app",
 
 
-
-
-
-
-
-
     
     data: {
         name: "",
-        greeting: ""
+        greeting: "",
+        records:[],
+        record: null,
     },
     methods: {
-        sayHello() {
-            console.log("Say Hello " + this.name)
-            if (this.name == "") {
-                this.greeting = "Hello NoName"
-            }
-            else {
-                this.greeting = "Hello " + this.name
-            }
-        }
+               getAndShowAllBooks(): void {
+            axios.get<IRecords[]>(baseUrl)
+                .then((response: AxiosResponse<IRecords[]>) => {
+                    this.records = response.data
+                })
+                .catch((error: AxiosError) => {
+                    alert(error.message)
+                })
+        },
     }
 })
