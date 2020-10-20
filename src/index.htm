@@ -21,8 +21,16 @@
     <input v-model="name" placeholder="Name">
     <button v-on:click="sayHello()" class="btn btn-primary">Say hello</button>
     <div>{{ greeting }}</div>
-    <h1>Nikolaj Test 2</h1>
   </div>
+
+  <ul v-if="records.length">
+    <li v-for="car in cars">
+      {{record.id}} {{record.title}} {{record.artist}} {{record.yop}} {{record.albumRating}}
+    </li>
+  </ul>
+  <div v-else>No cars</div>
+
+
 
   <script src="bundle.js"></script>
 </body>
