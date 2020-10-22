@@ -1,7 +1,4 @@
-//Kald på rest
-let baseUrl: string = "http://recordsrest.azurewebsites.net/api/records"
-
- import axios, {
+import axios, {
     AxiosResponse,
     AxiosError
 } from "../../node_modules/axios/index"
@@ -14,6 +11,9 @@ interface IRecords{
     albumRating: number
 }
 
+//Kald på rest
+let baseUrl: string = "http://recordsrest.azurewebsites.net/api/records"
+
 
 new Vue({
     // TypeScript compiler complains about Vue because the CDN link to Vue is in the html file.
@@ -21,14 +21,18 @@ new Vue({
     // which is included at the bottom of the html file.
     el: "#app",
 
-
-    
     data: {
         name: "",
         greeting: "",
         records:[],
+        id: "",
         record: null,
     },
+    created(): void {
+        console.log("created")
+        this.getAndShowAllBooks();
+    },
+
     methods: {
                getAndShowAllBooks(): void {
             axios.get<IRecords[]>(baseUrl)

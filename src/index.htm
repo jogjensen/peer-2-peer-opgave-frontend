@@ -20,15 +20,34 @@
   <div id="app">
 
     <h2>ALL RECORDS</h2>
-
+ 
     <ul v-if="records">
-      <li v-for="record in Records">
-        {{record.id}} {{record.title}} {{record.artist}} {{record.yop}} {{record.albumRating}}
-      </li>
+      <li v-for="record in records">{{record.id}} {{record.title}} {{record.artist}} {{record.yop}} {{record.albumRating}}</li>
     </ul>
-    <div v-else>No Records</div>
+    <div v-else>No Records</div> 
 
-    
+<!-- 
+    <div class="container">
+      <table class="table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Yop</th>
+            <th>Albumrating</th>
+          </tr>
+        </thead>
+        <tr v-for="record in records">
+          <td>{{record.id}}</td>
+          <td>{{record.title}}</td>
+          <td>{{record.artist}}</td>
+          <td>{{record.yop}}</td>
+          <td>{{record.albumRating}}</td>
+        </tr>
+      </table>
+    </div> -->
+
   </div>
 
 
