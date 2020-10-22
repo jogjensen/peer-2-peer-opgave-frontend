@@ -30,11 +30,11 @@ new Vue({
     },
     created(): void {
         console.log("created")
-        this.getAndShowAllBooks();
+        this.getAndShowAllRecords();
     },
 
     methods: {
-               getAndShowAllBooks(): void {
+               getAndShowAllRecords(): void {
             axios.get<IRecords[]>(baseUrl)
                 .then((response: AxiosResponse<IRecords[]>) => {
                     this.records = response.data
