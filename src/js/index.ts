@@ -8,7 +8,7 @@ interface IRecords {
     title: string,
     artist: string,
     yop: number,
-    albumRating: number
+    albumRating: number,
 }
 
 //Kald på rest
@@ -31,6 +31,8 @@ new Vue({
         addMessage: "",
         idToDelete: "",
         deleteMessage: "",
+        idToUpdate: null,
+        updateMessage: "",
     },
     created(): void {
         console.log("created")
@@ -73,7 +75,7 @@ new Vue({
         deleteRecordById(id: number): void {
             let uri: string = baseUrl + "/" + id
             console.log("deleteRecordById " + uri)
-            axios.delete<number>(uri)
+            axios.delete<number>(uri)   
                 .then((response: AxiosResponse<number>) => {
                     console.log("deleteRecordById result " + response.data)
                     if (response.data == 1) {
@@ -84,11 +86,12 @@ new Vue({
                     }
                 })
                 .catch((error: AxiosError) => {
-                alert(error.message)
-            })
-
-        }
-
+                    alert(error.message)
+                })
         },
+
     }
-,)
+
+})
+
+        
