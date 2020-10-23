@@ -12,7 +12,7 @@ interface IRecords{
 }
 
 //Kald på rest
-let baseUrl: string = "http://recordsrest.azurewebsites.net/api/records"
+let baseUrl: string = "https://recordsrest.azurewebsites.net/api/records"
 
 
 new Vue({

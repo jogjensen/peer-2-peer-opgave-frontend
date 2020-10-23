@@ -21,7 +21,7 @@
 
     <h2>ALL RECORDS</h2>
  
-    <ul v-if="records">
+    <ul v-if="records" id="records">
       <li v-for="record in records">{{record.id}} {{record.title}} {{record.artist}} {{record.yop}} {{record.albumRating}}</li>
     </ul>
     <div v-else>No Records</div> 
