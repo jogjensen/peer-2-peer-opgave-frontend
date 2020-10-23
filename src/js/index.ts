@@ -27,7 +27,7 @@ new Vue({
         records: [],
         id: "",
         record: null,
-        inputData: {id: 0,title: "", artist: "", yop: 0, albumRating: 0 },
+        inputData: { id: 0, title: "", artist: "", yop: 0, albumRating: 0 },
         addMessage: "",
     },
     created(): void {
@@ -68,6 +68,25 @@ new Vue({
                     alert(error.message)
                 })
         },
+        deleteRecordById(id, number): void {
+            let uri: string = baseUrl + "/" + id
+            console.log("deleteRecordById " + uri)
+            axios.delete<number>(uri)
+                .then((Response: AxiosResponse<number>) => {
+                    console.log("deleteRecordById result " + response
+                    if (Response.data == 1) {
+                        this.deleteMessage = "Record deleted"
+                        this.getAndShowAllRecords()
+                    } else {
+                        this.deleteMessage = "No such record"
+                    }
+                })
+                .catch((rerror: AxiosError) => ){
+                alert(error.message)
+            }
+        })
+
+        }
 
         },
     }
