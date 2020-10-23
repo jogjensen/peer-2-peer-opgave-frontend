@@ -43,5 +43,18 @@ new Vue({
                     alert(error.message)
                 })
         },
+
+        getRecordById(id: number): void {
+            let uri: string = baseUrl + "/" + id
+            console.log("getRecordById: " + uri)
+            axios.get<IRecords>(uri)
+                .then((response: AxiosResponse<IRecords>) => {
+                    this.record = response.data
+                })
+                .catch((error: AxiosError) => {
+                    alert(error.message)
+                })
+        },
+        },
     }
-})
+,)

@@ -27,8 +27,6 @@
     </ul>
     <div v-else>No Records</div> -->
 
-
-
     <div class="container">
       <table class="table-striped table-bordered table-hover">
         <thead>
@@ -52,9 +50,15 @@
     <br>
     
 
-    <h2>Search on an artist, song or year of production</h2>
-    <input placeholder="Søg her">
+    <h2>Search on an artist</h2>
+    <input v-model="id" placeholder="id" type="number">
+    <button v-on:click="getRecordById(id)" >Get record</button> 
+    <div v-if="record">{{record}}</div>
+    <div v-else>No such record</div>
+    
 
+
+    </div>
     <h2>Add a new music record</h2>
 
     <h2>Delete by ID</h2>
