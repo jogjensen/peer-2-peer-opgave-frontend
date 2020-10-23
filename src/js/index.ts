@@ -27,6 +27,8 @@ new Vue({
         records: [],
         id: "",
         record: null,
+        inputData: {id: 0,title: "", artist: "", yop: 0, albumRating: 0 },
+        addMessage: "",
     },
     created(): void {
         console.log("created")
@@ -55,6 +57,18 @@ new Vue({
                     alert(error.message)
                 })
         },
-    },
-}
+        addRecord(): void {
+            console.log("addRecord")
+            axios.post<number>(baseUrl, this.inputData)
+                .then((response: AxiosResponse<number>) => {
+                    this.addMessage = "Record added"
+                    this.getAndShowAllRecords()
+                })
+                .catch((error: AxiosError) => {
+                    alert(error.message)
+                })
+        },
+
+        },
+    }
 ,)
