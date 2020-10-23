@@ -3,7 +3,7 @@ import axios, {
     AxiosError
 } from "../../node_modules/axios/index"
 
-interface IRecords{
+interface IRecords {
     id: number,
     title: string,
     artist: string,
@@ -24,7 +24,7 @@ new Vue({
     data: {
         name: "",
         greeting: "",
-        records:[],
+        records: [],
         id: "",
         record: null,
     },
@@ -34,7 +34,7 @@ new Vue({
     },
 
     methods: {
-               getAndShowAllRecords(): void {
+        getAndShowAllRecords(): void {
             axios.get<IRecords[]>(baseUrl)
                 .then((response: AxiosResponse<IRecords[]>) => {
                     this.records = response.data
@@ -55,6 +55,6 @@ new Vue({
                     alert(error.message)
                 })
         },
-        },
-    }
+    },
+}
 ,)
