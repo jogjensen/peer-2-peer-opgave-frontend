@@ -64,11 +64,13 @@
     <input v-model.number="inputData.yop" placeholder="Year pf production" type="number" />
     <input v-model.number="inputData.albumRating" placeholder="Albumrating" type="number">
     <button v-on:click="addRecord()" class="btn btn-success">Add</button>
-    
     <div>{{addMessage}}</div>
 
 
     <h2>Delete by ID</h2>
+    <input v-model="idToDelete" placeholder="id" type="number">
+    <button v-on:click="deleteRecordById(idToDelete)" class="btn btn-warning">Delete Book</button>
+    <div>{{deleteMessage}}</div>
 
     <h2>Edit a record</h2>
 
