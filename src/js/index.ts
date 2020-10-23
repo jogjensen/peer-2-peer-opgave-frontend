@@ -31,6 +31,8 @@ new Vue({
         addMessage: "",
         idToDelete: "",
         deleteMessage: "",
+        updateData: { id: 0, title: "", artist: "", yop: 0, albumRating: 0 },
+        updateMessage: ""
     },
     created(): void {
         console.log("created")
@@ -84,9 +86,24 @@ new Vue({
                     }
                 })
                 .catch((error: AxiosError) => {
-                alert(error.message)
-            })
-
+                    alert(error.message)
+                })
+        },
+        updateRecord(id: number): void {
+            let uri: string = baseUrl + "/" + id
+            console.log("update record " + uri)
+            axios.put<number>(uri, this.updateData)
+                .then((response: AxiosResponse<number>) => {
+                    if (response.data == 1) {
+                        this.updateMessage = "Record updated"
+                        this.getAndShowAllRecords()
+                    } else {
+                        this.updateMessage = "No such record"
+                    }
+                })
+                .catch((error: AxiosError) => {
+                    alert(error.message)
+                })
         }
 
         },
