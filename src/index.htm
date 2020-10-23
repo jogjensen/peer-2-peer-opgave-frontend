@@ -20,14 +20,15 @@
   <div id="app">
 
     <h2>ALL RECORDS</h2>
- 
-    <ul v-if="records" id="recordId">
-      <li v-for="record in records">{{record.id}} {{record.title}} {{record.artist}} {{record.yop}} {{record.albumRating}}</li>
+
+    <!-- <ul v-if="records" id="recordId">
+      <li v-for="record in records">{{record.id}} {{record.title}} {{record.artist}} {{record.yop}}
+        {{record.albumRating}}</li>
     </ul>
-    <div v-else>No Records</div> 
+    <div v-else>No Records</div> -->
 
 
-    
+
     <div class="container">
       <table class="table-striped table-bordered table-hover">
         <thead>
@@ -47,7 +48,18 @@
           <td>{{record.albumRating}}</td>
         </tr>
       </table>
-    </div> 
+    </div>
+    <br>
+    
+
+    <h2>Search on an artist, song or year of production</h2>
+    <input placeholder="Søg her">
+
+    <h2>Add a new music record</h2>
+
+    <h2>Delete by ID</h2>
+
+    <h2>Edit a record</h2>
 
   </div>
 
