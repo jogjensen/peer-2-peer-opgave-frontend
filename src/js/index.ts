@@ -10,7 +10,7 @@ interface IRecords {
     yop: number,
     albumRating: number,
 }
-
+//comment
 //Kald på rest
 let baseUrl: string = "https://recordsrest.azurewebsites.net/api/records"
 
