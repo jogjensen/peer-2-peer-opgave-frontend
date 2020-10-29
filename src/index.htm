@@ -75,11 +75,11 @@
     <h2>Update Record</h2>
     <input v-model="idToUpdate" placeholder="Enter ID to update" type="number" />
     <p></p>
-    <input v-model="updateData.id" placeholder="Id" type="number" />
+    <input v-model.number="updateData.id" placeholder="Id" type="number" />
     <input v-model="updateData.title" placeholder="title" type="text" />
     <input v-model="updateData.artist" placeholder="Artist" type="text" />
-    <input v-model="updateData.yop" placeholder="Year of production" type="number" />
-    <input v-model="updateData.albumRating" placeholder="Albumrating" type="number" />
+    <input v-model.number="updateData.yop" placeholder="Year of production" type="number" />
+    <input v-model.number="updateData.albumRating" placeholder="Albumrating" type="number" />
     <button v-on:click="updateRecord(idToUpdate)" class="btn btn-success">Update</button>
     <div>{{updateMessage}}</div>
 
