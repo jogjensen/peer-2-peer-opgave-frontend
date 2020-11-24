@@ -39,6 +39,10 @@ new Vue({
         console.log("created")
         this.getAndShowAllRecords();
     },
+    getByArtist(artist: string) {
+        let url = baseUrl + "/artist/" + artist
+        this.getAndShowAllRecords(url)
+    },
 
     methods: {
         getAndShowAllRecords(): void {

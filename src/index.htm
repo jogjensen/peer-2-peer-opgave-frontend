@@ -51,8 +51,8 @@
     
 
     <h2>Search on an artist</h2>
-    <input v-model="id" placeholder="id" type="number">
-    <button v-on:click="getRecordById(id)" >Get record</button> 
+    <input v-model="id" placeholder="Søg på en artist" type="text">
+    <button v-on:click="getByArtist(artist)" >Get record</button> 
     <div v-if="record">{{record}}</div>
     <div v-else>No such record</div>
     
