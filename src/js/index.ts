@@ -98,6 +98,7 @@ new Vue({
         updateRecord(id: number): void {
             let uri: string = baseUrl + "/" + id
             console.log("update record " + uri)
+            console.log(this.updateData)
             axios.put<number>(uri, this.updateData)
                 .then((response: AxiosResponse<number>) => {
                     if (response.data == 1) {
@@ -111,7 +112,6 @@ new Vue({
                     alert(error.message)
                 })
         }
-
     }
 
 })
